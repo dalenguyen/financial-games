@@ -1,0 +1,62 @@
+/* Add some margin to the page and set a default font and colour */
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  /* Required to make elements draggable in old WebKit */
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+
+/* Main content area */
+
+#content {
+  margin: 0px 70px;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* "You did it!" message */
+#successMessage {
+  position: absolute;
+  left: 580px;
+  top: 250px;
+  width: 0;
+  height: 0;
+  z-index: 100;
+  background: #dfd;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  padding: 20px;
+}
+
+/* Balancesheet game start */
+.gamebox-drag {
+  outline: 1px solid black;
+  height: 695px;
+}
+
+.gamebox-drop-asset {
+  outline: 1px solid black;
+  height: 610px;
+}
+
+.gamebox-drop-liabilty-equity {
+  outline: 1px solid black;
+  height: 250px;
+}
+
+.box {
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
+  cursor: move;
+  text-align: left;
+}
