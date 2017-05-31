@@ -1,0 +1,16 @@
+.formular {
+  background-color: lightyellow;
+  width: 60%;
+  margin-left: 20%;
+  font-weight: bold;
+}
+
+.formular p {
+  padding: 5px;
+}
+
+.table {
+  margin-top: 20px;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc291cmNlcy9hc3NldHMvc2Fzcy9nYW1lcy9ic2hlZXQtZXhwbGFuYXRpb24uc2NzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIuZm9ybXVsYXIge1xyXG4gIGJhY2tncm91bmQtY29sb3I6IGxpZ2h0eWVsbG93O1xyXG4gIHdpZHRoOiA2MCU7XHJcbiAgbWFyZ2luLWxlZnQ6IDIwJTtcclxuICBmb250LXdlaWdodDogYm9sZDtcclxuXHJcbiAgcHtcclxuICAgIHBhZGRpbmc6IDVweDtcclxuICB9XHJcbn1cclxuXHJcbi50YWJsZSB7XHJcbiAgbWFyZ2luLXRvcDogMjBweDtcclxufVxyXG4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsQUFBQSxTQUFTLENBQUM7RUFDUixnQkFBZ0IsRUFBRSxXQUFXO0VBQzdCLEtBQUssRUFBRSxHQUFHO0VBQ1YsV0FBVyxFQUFFLEdBQUc7RUFDaEIsV0FBVyxFQUFFLElBQUk7Q0FLbEI7O0FBVEQsQUFNRSxTQU5PLENBTVAsQ0FBQyxDQUFBO0VBQ0MsT0FBTyxFQUFFLEdBQUc7Q0FDYjs7QUFHSCxBQUFBLE1BQU0sQ0FBQztFQUNMLFVBQVUsRUFBRSxJQUFJO0NBQ2pCIn0= */

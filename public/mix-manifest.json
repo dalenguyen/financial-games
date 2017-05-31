@@ -2,5 +2,8 @@
   "/js/app.js": "/js/app.js",
   "/css/app.css": "/css/app.css",
   "/css/games/balancesheet.css": "/css/games/balancesheet.css",
+  "/css/games/bsheet-explanation.css": "/css/games/bsheet-explanation.css",
+  "/css/games/quiz.css": "/css/games/quiz.css",
+  "/js/games/quiz.js": "/js/games/quiz.js",
   "/js/games/balancesheet.js": "/js/games/balancesheet.js"
 }
