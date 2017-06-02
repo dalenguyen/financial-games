@@ -5,86 +5,86 @@ var quiz = {
     {
       text: "1. Another name for the balance sheet is",
       responses: [
-        {text: 'Statement Of Operations'},
-        {text: 'Statement Of Financial Position', correct: true},
-      ],
-      hint: 'This is a hint'
+        {text: 'Statement Of Operations', correct: false},
+        {text: 'Statement Of Financial Position', correct: true}
+      ]
+
     }, {
       text: "2. The balance sheet heading will specify a",
       responses: [
         {text: 'Point In Time', correct: true},
-        {text: 'Period Of Time'},
-      ],
-      hint: 'This is a hint'
+        {text: 'Period Of Time', correct: false}
+      ]
+
     }, {
       text: "3. Which of the following is a category or element of the balance sheet?",
       responses: [
-        {text: 'Expenses'},
-        {text: 'Gains'},
+        {text: 'Expenses', correct: false},
+        {text: 'Gains', correct: false},
         {text: 'Liabilities', correct: true},
-        {text: 'Losses'},
-      ],
-      hint: 'This is a hint'
+        {text: 'Losses', correct: false}
+      ]
+
     }, {
       text: "4. Which of the following is an asset account?",
       responses: [
-        {text: 'Accounts Payable'},
+        {text: 'Accounts Payable', correct: false},
         {text: 'Prepaid Insurance', correct: true},
-        {text: 'Unearned Revenue'}
-      ],
-      hint: 'This is a hint'
+        {text: 'Unearned Revenue', correct: false}
+      ]
+
     }, {
       text: "5. Which of the following is a contra account?",
       responses: [
         {text: 'Accumulated Depreciation', correct: true},
-        {text: 'Mary Smith, Capital'},
-      ],
-      hint: 'This is a hint'
+        {text: 'Mary Smith, Capital', correct: false}
+      ]
+
     }, {
       text: "6. What is the normal balance for an asset account?",
       responses: [
         {text: 'Debit', correct: true},
-        {text: 'Credit'},
-      ],
-      hint: 'This is a hint'
+        {text: 'Credit', correct: false}
+      ]
+
     }, {
       text: "7. What is the normal balance for liability accounts?",
       responses: [
-        {text: 'Debit'},
-        {text: 'Credit', correct: true},
-      ],
-      hint: 'This is a hint'
+        {text: 'Debit', correct: false},
+        {text: 'Credit', correct: true}
+      ]
+
     }, {
       text: "8. What is the normal balance for stockholders' equity and owner's equity accounts?",
       responses: [
-        {text: 'Debit'},
-        {text: 'Credit', correct: true},
-      ],
-      hint: 'This is a hint'
+        {text: 'Debit', correct: false},
+        {text: 'Credit', correct: true}
+      ]
+
     }, {
       text: "9. Which of the following would not be a current asset?",
       responses: [
-        {text: 'Accounts Receivable'},
+        {text: 'Accounts Receivable', correct: false},
         {text: 'Land', correct: true},
-        {text: 'Prepaid Insurance'},
-        {text: 'Supplies'}
-      ],
-      hint: 'This is a hint'
+        {text: 'Prepaid Insurance', correct: false},
+        {text: 'Supplies', correct: false}
+      ]
+
     }, {
       text: "10. Which of the following would normally be a current liability?",
       responses: [
-        {text: 'Note Payable Due In Two Years'},
-        {text: 'Unearned Revenue', correct: true},
-      ],
-      hint: 'This is a hint'
+        {text: 'Note Payable Due In Two Years', correct: false},
+        {text: 'Unearned Revenue', correct: true}
+      ]
+
     }, {
       text: "11. Deferred credits will appear on the balance sheet with the",
       responses: [
-        {text: 'Assets'},
+        {text: 'Assets', correct: false},
         {text: 'Liabilities', correct: true},
-        {text: 'Owner\'s/Stockholders\' Equity'}
-      ],
-      hint: 'This is a hint'
+        {text: 'Owner\'s Stockholders\' Equity', correct: false}
+      ]
+
     }
   ]
 };
@@ -111,13 +111,28 @@ new Vue({
     },
     // Return "true" count in userResponses
     score: function() {
-      return this.userResponses.filter(function(val) { return val }).length;
+      let correctCount = 0;
+      let self = this;
+
+      this.quiz.questions.filter(function(val, i) {
+        val.userAnswerCorrect = false;
+        val.userAnswer = self.userResponses[i];
+
+        val.responses.filter(function(ans, j) {
+          if (ans.correct == true && val.userAnswer == ans.text) {
+            correctCount++;
+          }
+
+        })
+      });
+
+      return correctCount;
     },
 
     // Restart quiz
     start: function() {
+      this.userResponses = [];
       this.questionIndex = 0;
-      $('#app').find('label').removeClass('active').end().find('[type="radio"]').prop('checked', false);
     }
   }
 });

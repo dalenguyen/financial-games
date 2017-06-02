@@ -20,15 +20,14 @@
       </li>
       <li class="topic-outline-mini-item pro" data-item-id="100">
       <span></span>
-      <a href="/balance-sheet/tests" class="pro">
-      Take our Quick Test </a>
+      <a href="/balance-sheet-final" class="pro">
+      Balance Sheet Final </a>
       </li>
     </ul>
     <div id="topic-progress-bar">
       <div id="the-progress-bar" class="zero">
         <div style="width:0%;" data-percent="0"><span>0</span></div>
       </div>
-
     </div>
   </div>
 </aside>

@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/balance-sheet', 'GameController@bsheet');
+Route::get('/balance-sheet-final', 'GameController@bsheetFinal');
 Route::get('/balance-sheet-explaination', 'GameController@bsheetExplanation');
 Route::get('/balance-sheet-line-items', 'GameController@bsheetLineItems');
 

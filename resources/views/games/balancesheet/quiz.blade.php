@@ -1,4 +1,4 @@
-<!-- test.blade.php -->
+<!-- quiz.blade.php -->
 
 @extends('games.balancesheet.master')
 
@@ -17,15 +17,14 @@
         <div v-show="index === questionIndex" class="question-box">
           <h4>@{{ question.text }}</h4>
           <ol>
-            <li v-for="response in question.responses">
-              <label>
+            <li v-for="(response, child_index) in question.responses">
                 <!-- The radio button has three new directives -->
                 <!-- v-bind:value sets "value" to "true" if the response is correct -->
                 <!-- v-bind:name sets "name" to question index to group answers by question -->
                 <!-- v-model creates binding with userResponses -->
                 <input type="radio"
-                       v-bind:value="response.correct"
-                       v-bind:name="index"
+                       v-bind:value="response.text"
+                       v-bind:name="response.text"
                        v-model="userResponses[index]"> @{{response.text}}
               </label>
             </li>
@@ -38,9 +37,9 @@
           <button v-on:click="next">
             Next
           </button>
-          <button v-on:click="hints" class='pull-right'>
+          {{-- <button v-on:click="hints" class='pull-right'>
             Show hints
-          </button>
+          </button> --}}
         </div>
       </div>
       <div v-show="questionIndex === quiz.questions.length">
@@ -55,6 +54,7 @@
         </button>
       </div>
       {{-- <pre>@{{ $data | json}}</pre> --}}
+      <!-- <pre>@{{ userResponses }}</pre> -->
     </div>
 @endsection
 

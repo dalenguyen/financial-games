@@ -109,10 +109,20 @@ function init() {
   $('#gameContent').html('');
 
   // Create the game content
-  var gameNumbers = { 500: "Cash", 200: "Account Payable", 300: "Common Stock" };
+  var gameNumbers = { 14500: "Paid in Capital",
+    4500: "Retained Earnings",
+    4000: "Cash",
+    5000: "Account Receivable",
+    80000: "Building",
+    10500: "Equipment",
+    5500: "Account Payable",
+    75000: "Building Loan" };
+  console.log(gameNumbers);
+
   for (var k in gameNumbers) {
     if (gameNumbers.hasOwnProperty(k)) {
       // alert("Key is " + k + ", value is" + gameNumbers[k]);
+      //  console.log(gameNumbers);
       $('<li class="box" draggable="true" value="' + k + '">' + gameNumbers[k] + '<span class="pull-right">$' + k + "</span>" + '</li>').data('number', k).attr('id', gameNumbers[k]).appendTo('#gameContent');
     }
   }

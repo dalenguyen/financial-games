@@ -1,3 +1,12 @@
+/* Table color background */
+
+.table {
+  .table {
+    background-color: white;
+  }
+}
+
+
 /* Add some margin to the page and set a default font and colour */
 [draggable] {
   -moz-user-select: none;
@@ -11,47 +20,47 @@
 
 /* Main content area */
 
-#content {
-  margin: 0px 70px;
-  text-align: center;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-/* "You did it!" message */
-#successMessage {
-  position: absolute;
-  left: 580px;
-  top: 250px;
-  width: 0;
-  height: 0;
-  z-index: 100;
-  background: #dfd;
-  border: 2px solid #333;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
-  padding: 20px;
-}
+// #game-result {
+//   margin: 0px 70px;
+//   text-align: center;
+//   -moz-user-select: none;
+//   -webkit-user-select: none;
+//   user-select: none;
+//
+//   /* "You did it!" message */
+//   #successMessage {
+//     position: absolute;
+//     left: 580px;
+//     top: 250px;
+//     width: 0;
+//     height: 0;
+//     z-index: 100;
+//     background: #dfd;
+//     border: 2px solid #333;
+//     -moz-border-radius: 10px;
+//     -webkit-border-radius: 10px;
+//     border-radius: 10px;
+//     -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+//     -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+//     box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+//     padding: 20px;
+//   }
+// }
 
 /* Balancesheet game start */
 .gamebox-drag {
   outline: 1px solid black;
-  height: 695px;
+  height: 600px;
 }
 
 .gamebox-drop-asset {
   outline: 1px solid black;
-  height: 610px;
+  height: 535px;
 }
 
 .gamebox-drop-liabilty-equity {
   outline: 1px solid black;
-  height: 250px;
+  height: 230px;
 }
 
 .box {
@@ -59,4 +68,11 @@
   padding: 5px;
   cursor: move;
   text-align: left;
+}
+
+/* Check result buttons */
+
+.check-result{
+  text-align: center;
+  margin-bottom: 20px;
 }
