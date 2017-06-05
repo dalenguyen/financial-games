@@ -11,12 +11,12 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/balance-sheet-final', 'GameController@bsheetFinal');
 Route::get('/balance-sheet-explaination', 'GameController@bsheetExplanation');
 Route::get('/balance-sheet-line-items', 'GameController@bsheetLineItems');
 
 Route::get('/balance-sheet-quiz', 'GameController@bsheetQuiz');
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

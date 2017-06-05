@@ -5,20 +5,20 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
+                <div class="panel-heading text-center"><h3>Login to track your progress</h3></div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                        <div class="form-group{{ $errors->has('student_number') ? ' has-error' : '' }}">
+                            <label for="student_number" class="col-md-4 control-label">Student Number</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                <input id="student_number" type="text" class="form-control" name="student_number" value="{{ old('student_number') }}" required autofocus>
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('student_number'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('student_number') }}</strong>
                                     </span>
                                 @endif
                             </div>
