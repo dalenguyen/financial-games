@@ -96,80 +96,6 @@ body {
 
     }
   }
-
-  #topic-progress-bar {
-    padding-left: 28px;
-    padding-right: 36px;
-    padding-top: 42px;
-    padding-bottom: 40px;
-    background-color: #f9f8f1;
-    position: relative;
-
-    #the-progress-bar {
-      height: 49px;
-      border: 2px solid #edecd6;
-      border-radius: 4px;
-      background-color: #fff;
-      background-image: repeating-linear-gradient(-45deg,transparent,transparent 22px,#f7f6ed 22px,#f7f6ed 44px);
-      position: relative;
-
-      &:before {
-        content:'Your progress';
-        font-size: 14px;
-        color: #818065;
-        position: absolute;
-        top: -28px;
-        left: -1px;
-        font-weight: bold;
-        z-index: 10px;
-      }
-
-      &.zero div {
-        box-sizing: content-box;
-        border-right: 0;
-        animation-timing-function: ease;
-        text-align: right;
-        width: 65px;
-
-        span {
-          text-align: left;
-          padding-left: 15px;
-        }
-      }
-
-      div {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        border-radius: 4px 0 0 4px;
-        background: #9c3;
-        min-width: 50px;
-
-        span {
-          display: inline-block;
-          line-height: 47px;
-          font-weight: bold;
-          color: #fff;
-          font-size: 24px;
-          position: absolute;
-          left: 0px;
-          right: 0px;
-          text-align: center;
-          top: 0;
-          right: 0;
-
-          &:after{
-            content: '%';
-            font-size: 14px;
-            position: relative;
-            top: -7px;
-            left: 1px;
-          }
-        }
-      }
-    }
-  }
 }
 
 .main-content {
@@ -192,13 +118,13 @@ footer{
 // App layout
 
 #app {
-  margin: 0 auto;
+  margin: 20px auto;
   h1 {
     text-align: center;
   }
 }
 
-.question-box {  
+.question-box {
   padding: 40px;
 
   li {

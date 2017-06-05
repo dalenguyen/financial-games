@@ -37,10 +37,16 @@
           <button v-on:click="next">
             Next
           </button>
-          {{-- <button v-on:click="hints" class='pull-right'>
+
+          <button v-on:click="question.showHint = !question.showHint " class='pull-right'>
             Show hints
-          </button> --}}
+          </button>
+
+          <div class="alert alert-info" v-show="question.showHint" style="margin-top: 20px;">
+            <p>@{{ question.hint }}</p>
+          </div>
         </div>
+
       </div>
       <div v-show="questionIndex === quiz.questions.length">
         <h2>
@@ -52,13 +58,11 @@
         <button v-on:click="start">
           Restart
         </button>
-      </div>
-      {{-- <pre>@{{ $data | json}}</pre> --}}
-      <!-- <pre>@{{ userResponses }}</pre> -->
+      </div>            
     </div>
 @endsection
 
-@section('footer_script')  
+@section('footer_script')
   <script src="/js/games/quiz.js"></script>
 
 @endsection
