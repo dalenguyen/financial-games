@@ -7,7 +7,7 @@
       <li class="topic-outline-mini-item current" data-item-id="91">
         <span></span>
         <div>
-        <a href="/balance-sheet-explaination">Read the Explanation</a></div>
+        <a href="/balance-sheet-explanation">Read the Explanation</a></div>
       </li>
       <li class="topic-outline-mini-item" data-item-id="92">
         <span></span>

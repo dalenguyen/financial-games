@@ -58,9 +58,7 @@
     </div>
 @endsection
 
-@section('footer_script')
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.js">
-  </script>
+@section('footer_script')  
   <script src="/js/games/quiz.js"></script>
 
 @endsection

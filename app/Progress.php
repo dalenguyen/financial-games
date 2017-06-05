@@ -13,7 +13,7 @@ class Progress extends Model
        * @var array
        */
       protected $fillable = [
-          'user_id', 'percentage', 'type'
+          'user_id', 'percentage', 'type', 'lesson'
       ];
 
     /**
@@ -21,5 +21,5 @@ class Progress extends Model
      */
       public function user(){
         return $this->belongsTo('App\User');
-      }    
+      }
 }

@@ -35,7 +35,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/balance-sheet-explaination') }}">
+                    <a class="navbar-brand" href="{{ url('/balance-sheet-explanation') }}">
                       Financial Literacy Games
                     </a>
                 </div>
