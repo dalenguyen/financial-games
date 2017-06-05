@@ -26,4 +26,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the the process of the user.
+     */
+    public function progress(){
+      return $this->hasOne('App\Progress');
+    }
+
+    /**
+     * Get the the percentage value.
+     */
+    public function getProgress(){
+      // dd($this->progress());
+      return $this->progress()->first()->percentage;
+    }
 }

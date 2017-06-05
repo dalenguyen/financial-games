@@ -24,10 +24,18 @@
       Balance Sheet Final </a>
       </li>
     </ul>
-    <div id="topic-progress-bar">
-      <div id="the-progress-bar" class="zero">
-        <div style="width:0%;" data-percent="0"><span>0</span></div>
+
+    @if (Auth::guest())
+      <div class="alert alert-warning">
+        <a href="/login">Login</a> to track your progress
+      </div>
+    @else
+    <h4>Your Progress</h4>
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{ Auth::user()->getProgress() }}"
+      aria-valuemin="0" aria-valuemax="100" style="width:{{ Auth::user()->getProgress() }}%">
+        {{ Auth::user()->getProgress() }}% Complete
       </div>
     </div>
-  </div>
+    @endif
 </aside>
