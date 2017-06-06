@@ -58,11 +58,15 @@
         <button v-on:click="start">
           Restart
         </button>
-      </div>            
+      </div>
     </div>
+
+    @include('games.balancesheet.progresses.progress-bar')
 @endsection
 
 @section('footer_script')
   <script src="/js/games/quiz.js"></script>
-
+  <script type="text/javascript">
+      @include('games.balancesheet.progresses.progress-script')
+  </script>
 @endsection

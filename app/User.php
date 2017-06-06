@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Progress;
 
 class User extends Authenticatable
 {
@@ -38,7 +39,7 @@ class User extends Authenticatable
      * Get the the percentage value.
      */
     public function getProgress(){
-      // dd($this->progress());
-      return $this->progress()->first()->percentage;
+      $progresses = Progress::where('user_id', $this->id)->pluck('percentage')->toArray();      
+      return array_sum($progresses);
     }
 }

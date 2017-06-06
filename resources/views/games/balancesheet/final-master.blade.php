@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta name="csrf-token" content="{{ csrf_token() }}"> -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" href="/favicon.ico"/>
 
     <!--[if lte IE 8]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
@@ -35,7 +35,8 @@
          @include('games.balancesheet.includes._footer')
      </div>
    </div>
-
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.3/vue-resource.min.js"></script>
      <script src="/js/app.js"></script>
      @yield('footer_script')
    </body>

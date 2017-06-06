@@ -28,11 +28,11 @@
              <div class="col-sm-3 nav-sidebar">
                @include('games.balancesheet.includes._sidebar')
              </div>
-             <div class="col-sm-7 main-content">
+             <div class="col-sm-9 main-content">
                @yield('content')
              </div>
              <div class="col-sm-2">
-                 @include('games.balancesheet.includes._leaderboard')
+                 <!-- @include('games.balancesheet.includes._leaderboard') -->
              </div>
          </div>
          @include('games.balancesheet.includes._footer')

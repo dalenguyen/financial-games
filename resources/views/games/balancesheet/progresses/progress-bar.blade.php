@@ -1,6 +1,6 @@
 <!-- progress-bar.blade.php -->
 
-<div id="app" class="checkbox">
+<div id="progress" class="checkbox">
   @if (Auth::guest())
     <div class="alert alert-warning">
       <a href="/login">Login</a> to track your progress

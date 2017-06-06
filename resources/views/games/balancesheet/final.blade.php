@@ -75,8 +75,14 @@
   <button id="reset">Reset Game</button>
   <button id="result">Check Result</button>
 </div>
+
+@include('games.balancesheet.progresses.progress-bar')
+
 @endsection
 
 @section('footer_script')
   <script src="/js/games/balancesheet.js"></script>
+  <script type="text/javascript">
+      @include('games.balancesheet.progresses.progress-script')
+  </script>
 @endsection

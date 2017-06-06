@@ -7,11 +7,27 @@ use App\Progress;
 
 class GameController extends Controller
 {
+    /*
+     * Show Balance Sheet Final
+     */
     public function bsheetFinal(){
+      // AJAX request
+      if(request()->ajax()){
+        return $this->updateProgress('Final');
+      }
+      
       return view('games.balancesheet.final');
     }
 
+    /*
+     * Show Balance Sheet Quiz
+     */
     public function bsheetQuiz(){
+      // AJAX request
+      if(request()->ajax()){
+        return $this->updateProgress('Quiz');
+      }
+
       return view('games.balancesheet.quiz');
     }
 
@@ -27,6 +43,9 @@ class GameController extends Controller
       return view('games.balancesheet.explanation');
     }
 
+    /*
+     * Show Balance Sheet Line Items
+     */
     public function bsheetLineItems(){
       // AJAX request
       if(request()->ajax()){
@@ -36,6 +55,9 @@ class GameController extends Controller
       return view('games.balancesheet.line-items');
     }
 
+    /*
+     * Update the progress status on each lesson
+     */
     private function updateProgress($lesson){
 
       $user_id = request()->input('user_id');

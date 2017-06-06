@@ -1,7 +1,7 @@
 <!-- progress-script.blade.php -->
 
 new Vue({
-  el: "#app",
+  el: "#progress",
   data: {
     checked: false,
     user_id: {{Auth::id() ?? 0}}
