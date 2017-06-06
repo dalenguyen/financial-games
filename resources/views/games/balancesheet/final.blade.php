@@ -73,7 +73,7 @@
 
 <div class="check-result">
   <button id="reset">Reset Game</button>
-  <button onclick="test()">Check Result</button>
+  <button id="result">Check Result</button>
 </div>
 @endsection
 

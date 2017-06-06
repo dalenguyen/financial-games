@@ -1,4 +1,4 @@
-<!-- explaination.blade.php -->
+<!-- explanation.blade.php -->
 
 @extends('games.balancesheet.master')
 
@@ -50,71 +50,17 @@
     </tbody>
   </table>
 
-  <div id="app" class="checkbox">
-  @if (Auth::guest())
-    <div class="alert alert-warning">
-      <a href="/login">Login</a> to track your progress
-    </div>
-  @else
-
+  <div class="checkbox">
     <div class="alert alert-info">
-      <input type="checkbox" id="explanation" v-model="checked" style="margin-left: 0;">
-      <label for="checkbox">Check to finish this section</label>
+      <label><input type="checkbox" value="">Check to finish this section</label>
     </div>
-  @endif
   </div>
 
 @endsection
 
 @section('footer_script')
   <script type="text/javascript">
-    new Vue({
-      el: "#app",
-      data: {
-        checked: false,
-        user_id: {{Auth::id() ?? 0}}
-      },
-      mounted: function(){
-        // check if the lesson is finish or not
-        this.checkStatus();
-      },
-      watch: {
-        checked: function(){
-          let that = this;
-          let csrfToken = $('meta[name="csrf-token"]').attr('content');
-          let user_id = this.user_id
-
-          if(user_id > 0){
-            this.$http.post(
-                'http://games.dalenguyen.me/balance-sheet-explanation',
-                {checked: this.checked, lesson: "Explanation", user_id: user_id},
-                {headers : {'X-CSRF-TOKEN': csrfToken}}
-              ).then(function(response){
-                console.log(response.data);
-                // update the progress bar
-                $('.progress-bar').css('width', response.data + "%");
-                $('.progress-bar').text(response.data + "% Complete");
-              })
-          }
-        }
-      },
-      methods: {
-        checkStatus: function(){
-          let that = this;
-          if(this.user_id > 0){
-            this.$http.get('http://games.dalenguyen.me/balance-sheet-explanation',
-                    {params: {checkStatus: true, user_id: this.user_id}}
-                  ).
-                  then(function(response){
-                    // success callback
-                    that.checked = response.data > 0 ? true : false;
-                  }).then(function(response){
-                    // error callback
-                  });
-          }
-        }
-      }
-    })
+    console.log(1);
   </script>
 
 @endsection

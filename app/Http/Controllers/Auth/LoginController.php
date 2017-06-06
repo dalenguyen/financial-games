@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/balance-sheet-explaination';
+    protected $redirectTo = '/balance-sheet-explanation';
 
     /**
      * Create a new controller instance.
@@ -64,6 +64,6 @@ class LoginController extends Controller
 
          $request->session()->regenerate();
 
-         return redirect('/balance-sheet-explaination');
+         return redirect('/balance-sheet-explanation');
      }
 }

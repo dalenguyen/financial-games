@@ -1,11 +1,35 @@
-init();
-
 var totalAssetVal = 0,
     totalLiabilityVal = 0;
+
+// Create the game content
+
+var assets = {
+  "Cash" : 4000,
+  "Account Receivable" : 5000,
+  "Building" : 80000,
+  "Equipment" : 10500
+};
+
+var liabilities = {
+  "Account Payable" : 5500,
+  "Building Loan" : 75000
+};
+
+var equity = {
+  "Paid in Capital" : 14500,
+  "Retained Earnings" : 4500
+};
+
+// initialize the game
+init();
 
 // Reset button
 document.getElementById("reset").addEventListener("click", init);
 
+// Check result
+document.getElementById("result").addEventListener("click", result);
+
+// initialize the game
 function init(){
   totalAssetVal = 0;
   totalLiabilityVal = 0;
@@ -27,24 +51,99 @@ function init(){
   $('#equitySlot').html( '' );
   $('#gameContent').html( '' );
 
-  // Create the game content
-  var gameNumbers = {14500 : "Paid in Capital",
-                      4500 : "Retained Earnings",
-                      4000 : "Cash",
-                      5000 : "Account Receivable",
-                      80000 : "Building",
-                      10500 : "Equipment",
-                      5500: "Account Payable", 
-                      75000 : "Building Loan"};
-  console.log(gameNumbers);
+  initializeContent(assets);
+  initializeContent(liabilities);
+  initializeContent(equity);
 
-  for (var k in gameNumbers){
-    if (gameNumbers.hasOwnProperty(k)) {
-         // alert("Key is " + k + ", value is" + gameNumbers[k]);
-        //  console.log(gameNumbers);
-      $('<li class="box" draggable="true" value="'+ k +'">' + gameNumbers[k] + '<span class="pull-right">$'+k+"</span>" +'</li>').data( 'number', k ).attr( 'id', gameNumbers[k] ).appendTo('#gameContent');
+  // reorganize the game content
+  var $list = $("#gameContent");
+
+  $list.children().detach().sort(function(a, b) {
+    return $(a).text().localeCompare($(b).text());
+  }).appendTo($list);
+}
+
+// add content from Object to ul
+function initializeContent(contentArray){
+  for (var k in contentArray){
+    if (contentArray.hasOwnProperty(k)) {
+      $('<li class="box" draggable="true" value="'+ contentArray[k] +'">' + k + '<span class="pull-right">$' + contentArray[k] + "</span>" +'</li>').data( 'number', contentArray[k] ).attr( 'id', k ).appendTo('#gameContent');
     }
   }
+}
+
+// check game result
+function result(){
+  // create assets object from assetSlot
+  var assetResult = createObject('#assetSlot');
+
+  // create liabilities object from liabilitySlot
+  var liabilityResult = createObject('#liabilitySlot');
+
+  // create equity object from equitySlot
+  var equityResult = createObject('#equitySlot');
+
+  // Check the results
+  if(compare2Objects(assets, assetResult)
+        && compare2Objects(liabilities, liabilityResult)
+        && compare2Objects(equity, equityResult)){
+    console.log('You solved it');
+  }else{
+    console.log('Retry it');
+  }
+
+}
+
+// Return an object from a list
+function createObject(objectID){
+  var results = {};
+
+  $(objectID).each(function(){
+    var key = '',
+        value = 0;
+    $(this).find('li').each(function(){
+      var current = $(this);
+
+      if(current.children().length > 0) {
+        // add current text to our current phrase
+        key = current[0].id;
+        value = current[0].value;
+        // assign value to asset
+        results[key] = value;
+      }
+
+    })
+
+  });
+
+  return results;
+}
+
+// Compare two objects
+function compare2Objects(a, b) {
+    // Create arrays of property names
+    var aProps = Object.getOwnPropertyNames(a);
+    var bProps = Object.getOwnPropertyNames(b);
+
+    // If number of properties is different,
+    // objects are not equivalent
+    if (aProps.length != bProps.length) {
+        return false;
+    }
+
+    for (var i = 0; i < aProps.length; i++) {
+        var propName = aProps[i];
+
+        // If values of same property are not equal,
+        // objects are not equivalent
+        if (a[propName] !== b[propName]) {
+            return false;
+        }
+    }
+
+    // If we made it this far, objects
+    // are considered equivalent
+    return true;
 }
 
 var dragger,

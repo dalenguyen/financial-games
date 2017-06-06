@@ -18,7 +18,7 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/balance-sheet-explaination');
+            return redirect('/balance-sheet-explanation');
         }
 
         return $next($request);

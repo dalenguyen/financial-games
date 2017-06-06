@@ -14,10 +14,7 @@
 Auth::routes();
 
 Route::get('/balance-sheet-final', 'GameController@bsheetFinal');
-
 Route::get('/balance-sheet-explanation', 'GameController@bsheetExplanation');
-Route::post('/balance-sheet-explanation', 'GameController@bsheetExplanation');
-
 Route::get('/balance-sheet-line-items', 'GameController@bsheetLineItems');
 
 Route::get('/balance-sheet-quiz', 'GameController@bsheetQuiz');
