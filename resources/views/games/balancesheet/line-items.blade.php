@@ -129,7 +129,7 @@
                   <p>The amount of money the owner’s originally invested in the company or the amount of money raised by selling shares. </p>
                 </td>
                 <td>
-                  <p>The profits of the business from operations since inception that have not been withdrawn by owners or distributed as dividends.</p>                  
+                  <p>The profits of the business from operations since inception that have not been withdrawn by owners or distributed as dividends.</p>
                 </td>
               </tr>
             </tbody>
@@ -138,6 +138,8 @@
       </div>
     </div>
   </div>
+
+  @include('games.balancesheet.progresses.progress-bar')
 
 @endsection
 
@@ -151,6 +153,8 @@
   }
   $('.panel-group').on('hidden.bs.collapse', toggleIcon);
   $('.panel-group').on('shown.bs.collapse', toggleIcon);
+
+  @include('games.balancesheet.progresses.progress-script')
   </script>
 
 @endsection
