@@ -7,6 +7,7 @@
 @section('header_script')
   <link rel="stylesheet" href="/css/games/quiz.css">
   <link rel="stylesheet" href="/css/games/balancesheet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.5/sweetalert2.min.css">
 @endsection
 
 @section('content')

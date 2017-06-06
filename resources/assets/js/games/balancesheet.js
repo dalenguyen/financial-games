@@ -1,3 +1,6 @@
+// ES6 Modules or TypeScript
+import swal from 'sweetalert2';
+
 var totalAssetVal = 0,
     totalLiabilityVal = 0;
 
@@ -87,9 +90,9 @@ function result(){
   if(compare2Objects(assets, assetResult)
         && compare2Objects(liabilities, liabilityResult)
         && compare2Objects(equity, equityResult)){
-    console.log('You solved it');
+    swal('Good job!', 'You solved it!', 'success');
   }else{
-    console.log('Retry it');
+    swal('Oops...', 'Please try again!', 'error');
   }
 
 }
