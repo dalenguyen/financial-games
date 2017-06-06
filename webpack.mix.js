@@ -19,4 +19,4 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/games/bsheet-explanation.scss', 'public/css/games')
 
    .js('resources/assets/js/games/quiz.js', 'public/js/games')
-   .sass('resources/assets/sass/games/quiz.scss', 'public/css/games');
+   .sass('resources/assets/sass/games/quiz.scss', 'public/css/games');   
