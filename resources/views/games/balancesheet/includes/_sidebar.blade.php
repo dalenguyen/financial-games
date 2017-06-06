@@ -2,7 +2,7 @@
 
 <aside>
   <div class="grid-12">
-    <h3>Balance Sheet Outline</h3>
+    <h3><a href="/balance-sheet">Balance Sheet Outline</a></h3>
     <ul>
       <li class="topic-outline-mini-item current" data-item-id="91">
         <span></span>

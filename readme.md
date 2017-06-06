@@ -36,6 +36,7 @@ npm install
 * Add hint to quiz
 * Finalize the Balance Sheet Final check result algorithm
 * Add sweetalert2 for checking result on final game
+* Add tutorial page to balance sheet component
 
 ## Security Vulnerabilities
 

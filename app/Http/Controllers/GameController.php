@@ -8,6 +8,13 @@ use App\Progress;
 class GameController extends Controller
 {
     /*
+     * Show Balance Sheet Tutorial
+     */
+    public function bsheet(){
+      return view('games.balancesheet.index');
+    }
+
+    /*
      * Show Balance Sheet Final
      */
     public function bsheetFinal(){
@@ -15,7 +22,7 @@ class GameController extends Controller
       if(request()->ajax()){
         return $this->updateProgress('Final');
       }
-      
+
       return view('games.balancesheet.final');
     }
 

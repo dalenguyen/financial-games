@@ -13,6 +13,8 @@
 
 Auth::routes();
 
+Route::get('/balance-sheet', 'GameController@bsheet');
+
 Route::get('/balance-sheet-final', 'GameController@bsheetFinal');
 Route::post('/balance-sheet-final', 'GameController@bsheetFinal');
 

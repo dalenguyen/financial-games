@@ -2,7 +2,7 @@
 
 @extends('games.balancesheet.final-master')
 
-@section('title', 'Balance Sheet')
+@section('title', 'Balance Sheet Final')
 
 @section('header_script')
   <link rel="stylesheet" href="/css/games/quiz.css">
