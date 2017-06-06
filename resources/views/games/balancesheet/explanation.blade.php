@@ -50,17 +50,102 @@
     </tbody>
   </table>
 
-  <div class="checkbox">
-    <div class="alert alert-info">
-      <label><input type="checkbox" value="">Check to finish this section</label>
-    </div>
+  <div id="app" class="checkbox">
+    @if (Auth::guest())
+      <div class="alert alert-warning">
+        <a href="/login">Login</a> to track your progress
+      </div>
+    @else
+
+      <div class="alert alert-info">
+        <input type="checkbox" id="explanation" v-model="checked" style="margin-left: 0;" v-on:click="updatePercentage()">
+        <label for="checkbox">Check to finish this section</label>
+      </div>
+    @endif
   </div>
 
 @endsection
 
 @section('footer_script')
   <script type="text/javascript">
-    console.log(1);
+    new Vue({
+      el: "#app",
+      data: {
+        checked: false,
+        user_id: {{Auth::id() ?? 0}}
+      },
+      mounted: function(){
+        // check if the lesson is finish or not
+        this.checkStatus();
+      },
+      watch: {
+        checked: function(){
+          // let that = this;
+          // let csrfToken = $('meta[name="csrf-token"]').attr('content');
+          // let user_id = this.user_id;
+          // let newPercentage = 0;
+          //
+          // if(user_id > 0){
+          //   this.$http.post(
+          //       'http://games.dalenguyen.me/balance-sheet-explanation',
+          //       {checked: this.checked, lesson: "Explanation", user_id: user_id},
+          //       {headers : {'X-CSRF-TOKEN': csrfToken}}
+          //     ).then(function(response){
+          //       console.log(response.data);
+          //       // update the progress bar
+          //       newPercentage = parseInt($('.progress-bar').attr('aria-valuenow')) + parseInt(response.data);
+          //       console.log("New percentage: " + newPercentage);
+          //
+          //       $('.progress-bar').css('width', newPercentage + "%");
+          //       $('.progress-bar').text(newPercentage + "% Complete");
+          //       $('.progress-bar').attr('aria-valuenow', newPercentage);
+          //     })
+          // }
+        }
+      },
+      methods: {
+        checkStatus: function(){
+          let that = this;
+          if(this.user_id > 0){
+            this.$http.get('http://games.dalenguyen.me/balance-sheet-explanation',
+                    {params: {checkStatus: true, user_id: this.user_id}}
+                  ).
+                  then(function(response){
+                    // success callback
+                    console.log("GET: " + response.data);
+                    that.checked = response.data > 0 ? true : false;
+                    console.log("Checked: " + that.checked);
+                  }).then(function(response){
+                    // error callback
+                  });
+          }
+        },
+        updatePercentage: function(){
+          console.log('ready');
+          let that = this;
+          let csrfToken = $('meta[name="csrf-token"]').attr('content');
+          let user_id = this.user_id;
+          let newPercentage = 0;
+
+          if(user_id > 0){
+            this.$http.post(
+                'http://games.dalenguyen.me/balance-sheet-explanation',
+                {checked: this.checked, lesson: "Explanation", user_id: user_id},
+                {headers : {'X-CSRF-TOKEN': csrfToken}}
+              ).then(function(response){
+                console.log("Response data: " + response.data);
+                // update the progress bar
+                newPercentage = parseInt($('.progress-bar').attr('aria-valuenow')) + parseInt(response.data);
+                console.log("New percentage: " + newPercentage);
+
+                $('.progress-bar').css('width', newPercentage + "%");
+                $('.progress-bar').text(newPercentage + "% Complete");
+                $('.progress-bar').attr('aria-valuenow', newPercentage);
+              })
+          }
+        }
+      }
+    })
   </script>
 
 @endsection

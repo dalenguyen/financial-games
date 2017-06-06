@@ -47,15 +47,14 @@ class GameController extends Controller
                 'percentage'  => 25
               ]);
             }
-
+            return 25; // when checked
           }else { // student uncheck the lesson
             if($progress->count()){
               $progress->percentage = 0;
               $progress->save();
             }
+            return -25; // unwhen checked 
           }
-
-          return $progress->percentage;
         }
       }
 
