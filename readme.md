@@ -38,6 +38,10 @@ npm install
 * Add sweetalert2 for checking result on final game
 * Add tutorial page to balance sheet component
 
+## Version 2.0.0
+
+* Add Google Tag Manager (Google Analytics tag)
+
 ## Security Vulnerabilities
 
 If you discover a security vulnerability within Financial Literacy Games, please send an e-mail to [Dale Nguyen](dungnq@itbox4vn.com). All security vulnerabilities will be promptly addressed.
